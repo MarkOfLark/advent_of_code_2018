@@ -39,6 +39,4 @@ fn main() {
         Ok(solution) => { println!("{}",solution) },
         Err(err) => { panic!(err.to_string()) } 
     }
-
-    //println!("{}: {}",args[1],get_puzzle_string(&args[2]));
 }
