@@ -19,12 +19,12 @@ fn get_puzzle_string(input_string: &str) -> String {
 }
 
 
-fn call_solution(day_number: i32, input: &str) -> dlib::Result<String> {
+fn call_solution(day_number: i32, star_number:i32, input: &str) -> dlib::Result<String> {
     let lib_path = format!("target/debug/deps/libaoc2018_day{:02}.so",day_number);
     let dlib = dlib::Library::new(lib_path)?;
     unsafe {
-        let func: dlib::Symbol<unsafe extern fn(&str) -> String> = dlib.get(b"aoc_solution")?;
-        Ok(func(input))
+        let func: dlib::Symbol<unsafe extern fn(i32,&str) -> String> = dlib.get(b"aoc_solution")?;
+        Ok(func(star_number,input))
     }
 }
 
@@ -35,8 +35,10 @@ fn main() {
         panic!("Please provide the day# followed by the input or a file name");
     }
 
-    match call_solution(args[1].parse().unwrap(),&get_puzzle_string(&args[2])) {
-        Ok(solution) => { println!("{}",solution) },
-        Err(err) => { panic!(err.to_string()) } 
+    for star in 1..=2 {
+      match call_solution(args[1].parse().unwrap(),star,&get_puzzle_string(&args[2])) {
+          Ok(solution) => { println!("Star {}: {}",star,solution) },
+          Err(err) => { panic!(err.to_string()) } 
+      }
     }
 }
