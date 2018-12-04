@@ -7,3 +7,4 @@ authors = ["Mark E. McDermott <mark.elias.mcdermott@gmail.com>"]
 libloading = "0.5"
 aoc2018_day01 = { path = "aoc2018_day01" }
 aoc2018_day02 = { path = "aoc2018_day02" }
+aoc2018_day03 = { path = "aoc2018_day03" }
