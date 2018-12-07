@@ -10,10 +10,10 @@ fn get_puzzle_string(input_string: &str) -> String {
         Ok(mut f) => {
             let mut puzzle_string = String::new();
             f.read_to_string(&mut puzzle_string).expect("something went wrong reading the file");
-            puzzle_string
+            puzzle_string.trim().to_owned()
         }
         Err(_) => {
-            input_string.to_string()
+            input_string.trim().to_string()
         }
     }
 }

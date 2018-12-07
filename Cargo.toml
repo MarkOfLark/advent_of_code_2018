@@ -9,3 +9,4 @@ aoc2018_day01 = { path = "aoc2018_day01" }
 aoc2018_day02 = { path = "aoc2018_day02" }
 aoc2018_day03 = { path = "aoc2018_day03" }
 aoc2018_day04 = { path = "aoc2018_day04" }
+aoc2018_day05 = { path = "aoc2018_day05" }
