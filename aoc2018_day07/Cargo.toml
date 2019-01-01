@@ -1,0 +1,10 @@
+[package]
+name = "aoc2018_day07"
+version = "0.1.0"
+authors = ["Mark E. McDermott <mark.elias.mcdermott@gmail.com>"]
+edition = "2018"
+
+[lib]
+crate-type=["cdylib"]
+
+[dependencies]
